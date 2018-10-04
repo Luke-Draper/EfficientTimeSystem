@@ -1,0 +1,45 @@
+.chamfer-dark-grey {
+	background: #222222; /* fallback */
+	background:
+		-moz-linear-gradient(45deg,  transparent 10px, #222222 10px),
+		-moz-linear-gradient(135deg, transparent 10px, #222222 10px),
+		-moz-linear-gradient(225deg, transparent 10px, #222222 10px),
+		-moz-linear-gradient(315deg, transparent 10px, #222222 10px);
+	background:
+		-o-linear-gradient(45deg,  transparent 10px, #222222 10px),
+		-o-linear-gradient(135deg, transparent 10px, #222222 10px),
+		-o-linear-gradient(225deg, transparent 10px, #222222 10px),
+		-o-linear-gradient(315deg, transparent 10px, #222222 10px);
+	background:
+		-webkit-linear-gradient(45deg,  transparent 10px, #222222 10px),
+		-webkit-linear-gradient(135deg, transparent 10px, #222222 10px),
+		-webkit-linear-gradient(225deg, transparent 10px, #222222 10px),
+		-webkit-linear-gradient(315deg, transparent 10px, #222222 10px);
+}
+.chamfer-black {
+	background: #000000; /* fallback */
+	background:
+		-moz-linear-gradient(45deg,  transparent 10px, #000000 10px),
+		-moz-linear-gradient(135deg, transparent 10px, #000000 10px),
+		-moz-linear-gradient(225deg, transparent 10px, #000000 10px),
+		-moz-linear-gradient(315deg, transparent 10px, #000000 10px);
+	background:
+		-o-linear-gradient(45deg,  transparent 10px, #000000 10px),
+		-o-linear-gradient(135deg, transparent 10px, #000000 10px),
+		-o-linear-gradient(225deg, transparent 10px, #000000 10px),
+		-o-linear-gradient(315deg, transparent 10px, #000000 10px);
+	background:
+		-webkit-linear-gradient(45deg,  transparent 10px, #000000 10px),
+		-webkit-linear-gradient(135deg, transparent 10px, #000000 10px),
+		-webkit-linear-gradient(225deg, transparent 10px, #000000 10px),
+		-webkit-linear-gradient(315deg, transparent 10px, #000000 10px);
+}
+
+.chamfer-dark-grey,
+.chamfer-black {
+	background-position: bottom left, bottom right, top right, top left;
+	-moz-background-size: 55% 55%;
+	-webkit-background-size: 55% 55%;
+	background-size: 55% 55%;
+	background-repeat: no-repeat;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+		<script src="script.js"></script>
+		<link rel="stylesheet" href="chamfer.css">
+		<link rel="stylesheet" href="style.css">
+		<title>Efficient Clock</title>
+	</head>
+	<body>
+		<div class="container-center main-grid">
+			<div class="header"><h1 class="chamfer-dark-grey">Efficient Clock System</h1></div>
+			<ul class="extra-clock-section">
+				<li class="chamfer-dark-grey">
+					<p class="extra-clock">Decimal</p>
+					<span class="extra-clock" id="dec-clock"></span>
+				</li>
+				<li class="chamfer-dark-grey">
+					<p class="extra-clock">Efficient Decimal</p>
+					<span class="extra-clock" id="eff-dec-clock"></span>
+				</li>
+				<li class="chamfer-dark-grey">
+					<p class="extra-clock">Hexadecimal</p>
+					<span class="extra-clock" id="hexadec-clock"></span>
+				</li>
+				<li class="chamfer-dark-grey">
+					<p class="extra-clock">Efficient Hexadecimal</p>
+					<span class="extra-clock" id="eff-hexadec-clock"></span>
+				</li>
+			</ul>
+			<div class="main-clock-section chamfer-dark-grey">
+				<div id="main-clock-digits">
+					<div class="eff-digit eff-1" id="main-digit-0"><span class="d-0"></span><span class="d-1"></span><span class="d-2"></span><span class="d-3"></span><span class="d-4"></span><span class="d-5"></span><span class="d-6"></span><span class="d-7"></span><span class="d-8"></span></div>
+					<div class="eff-digit eff-2" id="main-digit-1"><span class="d-0"></span><span class="d-1"></span><span class="d-2"></span><span class="d-3"></span><span class="d-4"></span><span class="d-5"></span><span class="d-6"></span><span class="d-7"></span><span class="d-8"></span></div>
+					<div class="eff-digit eff-3" id="main-digit-2"><span class="d-0"></span><span class="d-1"></span><span class="d-2"></span><span class="d-3"></span><span class="d-4"></span><span class="d-5"></span><span class="d-6"></span><span class="d-7"></span><span class="d-8"></span></div>
+					<div class="eff-digit eff-4" id="main-digit-3"><span class="d-0"></span><span class="d-1"></span><span class="d-2"></span><span class="d-3"></span><span class="d-4"></span><span class="d-5"></span><span class="d-6"></span><span class="d-7"></span><span class="d-8"></span></div>
+				</div>
+				<div id="main-clock-readout">
+					<div class="eff-readout eff-0" id="main-readout-0"></div>
+					<div class="eff-readout eff-0" id="main-readout-1"></div>
+					<div class="eff-readout eff-0" id="main-readout-2"></div>
+					<div class="eff-readout eff-0" id="main-readout-3"></div>
+				</div>
+			</div>
+			<div class="comparison-section chamfer-dark-grey">
+				<div class=comparison-container>
+					<div class="hour-24">
+						<p class="hour-24-p" id="hour-24-0" >00:00</p>
+						<p class="hour-24-p" id="hour-24-1" >01:00</p>
+						<p class="hour-24-p" id="hour-24-2" >02:00</p>
+						<p class="hour-24-p" id="hour-24-3" >03:00</p>
+						<p class="hour-24-p" id="hour-24-4" >04:00</p>
+						<p class="hour-24-p" id="hour-24-5" >05:00</p>
+						<p class="hour-24-p" id="hour-24-6" >06:00</p>
+						<p class="hour-24-p" id="hour-24-7" >07:00</p>
+						<p class="hour-24-p" id="hour-24-8" >08:00</p>
+						<p class="hour-24-p" id="hour-24-9" >09:00</p>
+						<p class="hour-24-p" id="hour-24-10">10:00</p>
+						<p class="hour-24-p" id="hour-24-11">11:00</p>
+						<p class="hour-24-p" id="hour-24-12">12:00</p>
+						<p class="hour-24-p" id="hour-24-13">13:00</p>
+						<p class="hour-24-p" id="hour-24-14">14:00</p>
+						<p class="hour-24-p" id="hour-24-15">15:00</p>
+						<p class="hour-24-p" id="hour-24-16">16:00</p>
+						<p class="hour-24-p" id="hour-24-17">17:00</p>
+						<p class="hour-24-p" id="hour-24-18">18:00</p>
+						<p class="hour-24-p" id="hour-24-19">19:00</p>
+						<p class="hour-24-p" id="hour-24-20">20:00</p>
+						<p class="hour-24-p" id="hour-24-21">21:00</p>
+						<p class="hour-24-p" id="hour-24-22">22:00</p>
+						<p class="hour-24-p" id="hour-24-23">23:00</p>
+					</div>
+					<div class="hour-16">
+						<p class="hour-16-p" id="hour-16-0">0</p>
+						<p class="hour-16-p" id="hour-16-1">1</p>
+						<p class="hour-16-p" id="hour-16-2">2</p>
+						<p class="hour-16-p" id="hour-16-3">3</p>
+						<p class="hour-16-p" id="hour-16-4">4</p>
+						<p class="hour-16-p" id="hour-16-5">5</p>
+						<p class="hour-16-p" id="hour-16-6">6</p>
+						<p class="hour-16-p" id="hour-16-7">7</p>
+						<p class="hour-16-p" id="hour-16-8">8</p>
+						<p class="hour-16-p" id="hour-16-9">9</p>
+						<p class="hour-16-p" id="hour-16-a">a</p>
+						<p class="hour-16-p" id="hour-16-b">b</p>
+						<p class="hour-16-p" id="hour-16-c">c</p>
+						<p class="hour-16-p" id="hour-16-d">d</p>
+						<p class="hour-16-p" id="hour-16-e">e</p>
+						<p class="hour-16-p" id="hour-16-f">f</p>
+					</div>
+					<div id="comparison-line"></div>
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
