@@ -1,0 +1,142 @@
+.eff-digit {
+	display: inline-block;
+	width: 64px;
+	height: 64px;
+	font-size: 64px;
+}
+.eff-digit-container {
+	display: grid;
+	width: 100%;
+	height: 100%;
+	align-items: center;
+	justify-items: center;
+	grid-template-columns: 30% 30% 30%;
+	grid-template-rows: 30% 30% 30%;
+	grid-gap: 4% 4%;
+	grid-template-areas:
+		"d-4 d-5 d-6"
+		"d-3 d-0 d-7"
+		"d-2 d-1 d-8";
+}
+.d-0 {
+	grid-area: d-0;
+	width: 48%;
+	height: 48%;
+	background: #444444; /* fallback */
+	background:
+		-moz-linear-gradient(45deg,  transparent 28.8%, #444444 28.8%),
+		-moz-linear-gradient(135deg, transparent 28.8%, #444444 28.8%),
+		-moz-linear-gradient(225deg, transparent 28.8%, #444444 28.8%),
+		-moz-linear-gradient(315deg, transparent 28.8%, #444444 28.8%);
+	background:
+		-o-linear-gradient(45deg,  transparent 28.8%, #444444 28.8%),
+		-o-linear-gradient(135deg, transparent 28.8%, #444444 28.8%),
+		-o-linear-gradient(225deg, transparent 28.8%, #444444 28.8%),
+		-o-linear-gradient(315deg, transparent 28.8%, #444444 28.8%);
+	background:
+		-webkit-linear-gradient(45deg,  transparent 28.8%, #444444 28.8%),
+		-webkit-linear-gradient(135deg, transparent 28.8%, #444444 28.8%),
+		-webkit-linear-gradient(225deg, transparent 28.8%, #444444 28.8%),
+		-webkit-linear-gradient(315deg, transparent 28.8%, #444444 28.8%);
+	background-position: bottom left, bottom right, top right, top left;
+	-moz-background-size: 55% 55%;
+	-webkit-background-size: 55% 55%;
+	background-size: 55% 55%;
+	background-repeat: no-repeat;
+}
+.d-1 {
+	grid-area: d-1;
+	border-bottom: .15789473684em solid #444444; /* 30/190 */
+	border-left: .06315789473em solid transparent; /* 12/190 */
+	border-right: .06315789473em solid transparent;
+	height: 0;
+	width: .2em; /* 38/190 */
+}
+.d-2 {
+	grid-area: d-2;
+	transform-origin: bottom right;
+	transform: rotate(45deg);
+	border-bottom: .15789473684em solid #444444;
+	border-left: .06315789473em solid transparent;
+	border-right: .06315789473em solid transparent;
+	height: 0;
+	width: .2em;
+	margin-top: -.01578947368em; /* -3/190 */
+}
+.d-3 {
+	grid-area: d-3;
+	border-left: .15789473684em solid #444444;
+	border-top: .06315789473em solid transparent;
+	border-bottom: .06315789473em solid transparent;
+	width: 0;
+	height: .2em;
+}
+.d-4 {
+	grid-area: d-4;
+	transform-origin: bottom left;
+	transform: rotate(45deg);
+	border-left: .15789473684em solid #444444;
+	border-top: .06315789473em solid transparent;
+	border-bottom: .06315789473em solid transparent;
+	width: 0;
+	height: .2em;
+	margin-right: -.01578947368em;
+}
+.d-5 {
+	grid-area: d-5;
+	border-top: .15789473684em solid #444444;
+	border-left: .06315789473em solid transparent;
+	border-right: .06315789473em solid transparent;
+	height: 0;
+	width: .2em;
+}
+.d-6 {
+	grid-area: d-6;
+	transform-origin: top left;
+	transform: rotate(45deg);
+	border-top: .15789473684em solid #444444;
+	border-left: .06315789473em solid transparent;
+	border-right: .06315789473em solid transparent;
+	height: 0;
+	width: .2em;
+	margin-bottom: -.01578947368em;
+}
+.d-7 {
+	grid-area: d-7;
+	border-right: .15789473684em solid #444444;
+	border-top: .06315789473em solid transparent;
+	border-bottom: .06315789473em solid transparent;
+	width: 0;
+	height: .2em;
+}
+.d-8 {
+	grid-area: d-8;
+	transform-origin: top right;
+	transform: rotate(45deg);
+	border-right: .15789473684em solid #444444;
+	border-top: .06315789473em solid transparent;
+	border-bottom: .06315789473em solid transparent;
+	width: 0;
+	height: .2em;
+	margin-left: -.01578947368em;
+}
+
+.eff-0 .d-1, .eff-3 .d-1, .eff-4 .d-1,.eff-5 .d-1,.eff-6 .d-1,.eff-7 .d-1,
+.eff-8 .d-1, .eff-9 .d-1, .eff-a .d-1,.eff-b .d-1,.eff-c .d-1,.eff-d .d-1,.eff-e .d-1,.eff-f .d-1,
+.eff-0 .d-2, .eff-1 .d-2, .eff-5 .d-2,.eff-6 .d-2,.eff-7 .d-2,
+.eff-8 .d-2, .eff-9 .d-2, .eff-a .d-2,.eff-b .d-2,.eff-c .d-2,.eff-d .d-2,.eff-e .d-2,.eff-f .d-2,
+.eff-0 .d-3, .eff-1 .d-3, .eff-2 .d-3,.eff-3 .d-3,.eff-7 .d-3,
+.eff-8 .d-3, .eff-9 .d-3, .eff-a .d-3,.eff-b .d-3,.eff-c .d-3,.eff-d .d-3,.eff-e .d-3,.eff-f .d-3,
+.eff-0 .d-4, .eff-1 .d-4, .eff-2 .d-4,.eff-3 .d-4,.eff-4 .d-4,.eff-5 .d-4,
+.eff-9 .d-4, .eff-a .d-4, .eff-b .d-4,.eff-c .d-4,.eff-d .d-4,.eff-e .d-4,.eff-f .d-4,
+.eff-0 .d-5, .eff-1 .d-5, .eff-2 .d-5,.eff-3 .d-5,.eff-4 .d-5,.eff-5 .d-5,.eff-6 .d-5,.eff-7 .d-5,
+.eff-b .d-5, .eff-c .d-5, .eff-d .d-5,.eff-e .d-5,.eff-f .d-5,
+.eff-0 .d-6, .eff-1 .d-6, .eff-2 .d-6,.eff-3 .d-6,.eff-4 .d-6,.eff-5 .d-6,.eff-6 .d-6,.eff-7 .d-6,
+.eff-8 .d-6, .eff-9 .d-6, .eff-d .d-6,.eff-e .d-6,.eff-f .d-6,
+.eff-0 .d-7, .eff-1 .d-7, .eff-2 .d-7,.eff-3 .d-7,.eff-4 .d-7,.eff-5 .d-7,.eff-6 .d-7,.eff-7 .d-7,
+.eff-8 .d-7, .eff-9 .d-7, .eff-a .d-7,.eff-b .d-7,.eff-f .d-7,
+.eff-0 .d-8, .eff-1 .d-8, .eff-2 .d-8,.eff-3 .d-8,.eff-4 .d-8,.eff-5 .d-8,.eff-6 .d-8,.eff-7 .d-8,
+.eff-8 .d-8, .eff-9 .d-8, .eff-a .d-8,.eff-b .d-8,.eff-c .d-8,.eff-d .d-8 {
+	background-color: transparent !important;
+	border-color: transparent !important;
+}
