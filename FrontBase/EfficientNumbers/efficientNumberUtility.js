@@ -146,7 +146,7 @@ $(document).ready(function(){
 	setupEffDigits();
 });
 function setupEffDigits() {
-	$(".eff-digit").html('<div class="eff-digit-container" id="main-digit-3"><span class="d-0"></span><span class="d-1"></span><span class="d-2"></span><span class="d-3"></span><span class="d-4"></span><span class="d-5"></span><span class="d-6"></span><span class="d-7"></span><span class="d-8"></span></div>');
+	$(".eff-digit").html('<div class="eff-digit-container"><span class="d-0"></span><span class="d-1"></span><span class="d-2"></span><span class="d-3"></span><span class="d-4"></span><span class="d-5"></span><span class="d-6"></span><span class="d-7"></span><span class="d-8"></span></div>');
 	setupEffDigitSize(".eff-digit");
 }
 

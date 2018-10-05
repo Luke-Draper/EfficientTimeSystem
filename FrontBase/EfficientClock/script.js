@@ -1,7 +1,4 @@
 var standardTimeout;
-const CONVERSION_FACTOR = 512/675;
-const CONVERSION_OFFSET = 60*60*9; //09:00:00
-const MAX_DEC_TIME = 60*60*24;
 var testTime=0;
 
 function getTestTime() {
