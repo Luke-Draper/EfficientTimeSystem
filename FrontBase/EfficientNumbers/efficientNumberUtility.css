@@ -1,3 +1,16 @@
+.eff-number-container {
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	justify-content: center;
+	grid-template-columns: auto;
+	grid-template-rows: 1fr;
+	grid-gap: 1% 1%;
+	grid-template-areas:
+		"d-4 d-5 d-6"
+		"d-3 d-0 d-7"
+		"d-2 d-1 d-8";
+}
 .eff-digit {
 	display: inline-block;
 	width: 64px;
@@ -17,6 +30,12 @@
 		"d-4 d-5 d-6"
 		"d-3 d-0 d-7"
 		"d-2 d-1 d-8";
+}
+.eff-digit.eff-digit-point .eff-digit-container {
+	grid-template-areas:
+		"d-4 d-5 d-6"
+		"d-3 d-1 d-7"
+		"d-2 d-0 d-8";
 }
 .d-0 {
 	grid-area: d-0;
@@ -121,22 +140,24 @@
 	margin-left: -.01578947368em;
 }
 
-.eff-0 .d-1, .eff-3 .d-1, .eff-4 .d-1,.eff-5 .d-1,.eff-6 .d-1,.eff-7 .d-1,
-.eff-8 .d-1, .eff-9 .d-1, .eff-a .d-1,.eff-b .d-1,.eff-c .d-1,.eff-d .d-1,.eff-e .d-1,.eff-f .d-1,
-.eff-0 .d-2, .eff-1 .d-2, .eff-5 .d-2,.eff-6 .d-2,.eff-7 .d-2,
-.eff-8 .d-2, .eff-9 .d-2, .eff-a .d-2,.eff-b .d-2,.eff-c .d-2,.eff-d .d-2,.eff-e .d-2,.eff-f .d-2,
-.eff-0 .d-3, .eff-1 .d-3, .eff-2 .d-3,.eff-3 .d-3,.eff-7 .d-3,
-.eff-8 .d-3, .eff-9 .d-3, .eff-a .d-3,.eff-b .d-3,.eff-c .d-3,.eff-d .d-3,.eff-e .d-3,.eff-f .d-3,
-.eff-0 .d-4, .eff-1 .d-4, .eff-2 .d-4,.eff-3 .d-4,.eff-4 .d-4,.eff-5 .d-4,
-.eff-9 .d-4, .eff-a .d-4, .eff-b .d-4,.eff-c .d-4,.eff-d .d-4,.eff-e .d-4,.eff-f .d-4,
-.eff-0 .d-5, .eff-1 .d-5, .eff-2 .d-5,.eff-3 .d-5,.eff-4 .d-5,.eff-5 .d-5,.eff-6 .d-5,.eff-7 .d-5,
-.eff-b .d-5, .eff-c .d-5, .eff-d .d-5,.eff-e .d-5,.eff-f .d-5,
-.eff-0 .d-6, .eff-1 .d-6, .eff-2 .d-6,.eff-3 .d-6,.eff-4 .d-6,.eff-5 .d-6,.eff-6 .d-6,.eff-7 .d-6,
-.eff-8 .d-6, .eff-9 .d-6, .eff-d .d-6,.eff-e .d-6,.eff-f .d-6,
-.eff-0 .d-7, .eff-1 .d-7, .eff-2 .d-7,.eff-3 .d-7,.eff-4 .d-7,.eff-5 .d-7,.eff-6 .d-7,.eff-7 .d-7,
-.eff-8 .d-7, .eff-9 .d-7, .eff-a .d-7,.eff-b .d-7,.eff-f .d-7,
-.eff-0 .d-8, .eff-1 .d-8, .eff-2 .d-8,.eff-3 .d-8,.eff-4 .d-8,.eff-5 .d-8,.eff-6 .d-8,.eff-7 .d-8,
-.eff-8 .d-8, .eff-9 .d-8, .eff-a .d-8,.eff-b .d-8,.eff-c .d-8,.eff-d .d-8 {
+.eff-digit-0 .d-1, .eff-digit-3 .d-1, .eff-digit-4 .d-1,.eff-digit-5 .d-1,.eff-digit-6 .d-1,.eff-digit-7 .d-1,
+.eff-digit-8 .d-1, .eff-digit-9 .d-1, .eff-digit-a .d-1,.eff-digit-b .d-1,.eff-digit-c .d-1,.eff-digit-d .d-1,.eff-digit-e .d-1,.eff-digit-f .d-1,
+.eff-digit-0 .d-2, .eff-digit-1 .d-2, .eff-digit-5 .d-2,.eff-digit-6 .d-2,.eff-digit-7 .d-2,
+.eff-digit-8 .d-2, .eff-digit-9 .d-2, .eff-digit-a .d-2,.eff-digit-b .d-2,.eff-digit-c .d-2,.eff-digit-d .d-2,.eff-digit-e .d-2,.eff-digit-f .d-2,
+.eff-digit-0 .d-3, .eff-digit-1 .d-3, .eff-digit-2 .d-3,.eff-digit-3 .d-3,.eff-digit-7 .d-3,
+.eff-digit-8 .d-3, .eff-digit-9 .d-3, .eff-digit-a .d-3,.eff-digit-b .d-3,.eff-digit-c .d-3,.eff-digit-d .d-3,.eff-digit-e .d-3,.eff-digit-f .d-3,
+.eff-digit-0 .d-4, .eff-digit-1 .d-4, .eff-digit-2 .d-4,.eff-digit-3 .d-4,.eff-digit-4 .d-4,.eff-digit-5 .d-4,
+.eff-digit-9 .d-4, .eff-digit-a .d-4, .eff-digit-b .d-4,.eff-digit-c .d-4,.eff-digit-d .d-4,.eff-digit-e .d-4,.eff-digit-f .d-4,
+.eff-digit-0 .d-5, .eff-digit-1 .d-5, .eff-digit-2 .d-5,.eff-digit-3 .d-5,.eff-digit-4 .d-5,.eff-digit-5 .d-5,.eff-digit-6 .d-5,.eff-digit-7 .d-5,
+.eff-digit-b .d-5, .eff-digit-c .d-5, .eff-digit-d .d-5,.eff-digit-e .d-5,.eff-digit-f .d-5,
+.eff-digit-0 .d-6, .eff-digit-1 .d-6, .eff-digit-2 .d-6,.eff-digit-3 .d-6,.eff-digit-4 .d-6,.eff-digit-5 .d-6,.eff-digit-6 .d-6,.eff-digit-7 .d-6,
+.eff-digit-8 .d-6, .eff-digit-9 .d-6, .eff-digit-d .d-6,.eff-digit-e .d-6,.eff-digit-f .d-6,
+.eff-digit-0 .d-7, .eff-digit-1 .d-7, .eff-digit-2 .d-7,.eff-digit-3 .d-7,.eff-digit-4 .d-7,.eff-digit-5 .d-7,.eff-digit-6 .d-7,.eff-digit-7 .d-7,
+.eff-digit-8 .d-7, .eff-digit-9 .d-7, .eff-digit-a .d-7,.eff-digit-b .d-7,.eff-digit-f .d-7,
+.eff-digit-0 .d-8, .eff-digit-1 .d-8, .eff-digit-2 .d-8,.eff-digit-3 .d-8,.eff-digit-4 .d-8,.eff-digit-5 .d-8,.eff-digit-6 .d-8,.eff-digit-7 .d-8,
+.eff-digit-8 .d-8, .eff-digit-9 .d-8, .eff-digit-a .d-8,.eff-digit-b .d-8,.eff-digit-c .d-8,.eff-digit-d .d-8,
+.eff-digit-point .d-1, .eff-digit-point .d-2, .eff-digit-point .d-3, .eff-digit-point .d-4,
+.eff-digit-point .d-5, .eff-digit-point .d-6, .eff-digit-point .d-7, .eff-digit-point .d-8 {
 	background-color: transparent !important;
 	border-color: transparent !important;
 }

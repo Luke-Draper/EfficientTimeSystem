@@ -6,7 +6,7 @@ function getTestTime() {
 }
 
 function loadTime() {
-	var current = new Date();//getTestTime());
+	var current = new Date(getTestTime());
 	var hour = current.getHours();
 	var minute = current.getMinutes();
 	var second = current.getSeconds();
