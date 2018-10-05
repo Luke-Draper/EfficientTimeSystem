@@ -53,6 +53,7 @@ body {
 	grid-template-areas:
 		"main-readout-0 main-readout-1 main-readout-2 main-readout-3";
 }
+
 .eff-digit.eff-12px {
 	width: 12px;
 	height: 12px;
@@ -97,7 +98,6 @@ body {
 		"d-3 d-0 d-7"
 		"d-2 d-1 d-8";
 }
-
 .d-0 {
 	grid-area: d-0;
 	width: 48%;
@@ -217,6 +217,6 @@ body {
 .eff-8 .d-7, .eff-9 .d-7, .eff-a .d-7,.eff-b .d-7,.eff-f .d-7,
 .eff-0 .d-8, .eff-1 .d-8, .eff-2 .d-8,.eff-3 .d-8,.eff-4 .d-8,.eff-5 .d-8,.eff-6 .d-8,.eff-7 .d-8,
 .eff-8 .d-8, .eff-9 .d-8, .eff-a .d-8,.eff-b .d-8,.eff-c .d-8,.eff-d .d-8 {
-	background-color: transparent;
-	border-color: transparent;
+	background-color: transparent !important;
+	border-color: transparent !important;
 }
