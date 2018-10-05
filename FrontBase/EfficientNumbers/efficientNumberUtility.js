@@ -164,5 +164,3 @@ function setEffDigitSize(targetDigitSelector, size) {
 function setupEffDigitSize(targetDigitSelector) {
 	setEffDigitSize(targetDigitSelector, $(targetDigitSelector).attr("eff-digit-size"));
 }
-
-/* -=- Clock Number Display -=- */

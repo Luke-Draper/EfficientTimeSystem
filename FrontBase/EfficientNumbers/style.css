@@ -19,37 +19,3 @@ body {
 	margin: 0 auto;
 	width: 1200px;
 }
-
-
-/* -=- Main Clock Section -=- */
-.main-clock-section {
-	grid-area: main-clock-section;
-	grid-template-columns: auto;
-	grid-template-rows: auto auto;
-	margin-left: 40px;
-	grid-template-areas:
-		"main-clock-digits"
-		"main-clock-readout";
-}
-#main-clock-digits {
-	grid-area: main-clock-digits;
-	display: grid;
-	margin-top: 20px;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: auto;
-	grid-template-areas:
-		"main-digit-0 main-digit-1 main-digit-2 main-digit-3";
-}
-#main-clock-readout {
-	grid-area: main-clock-readout;
-	display: grid;
-	width: 20%;
-	justify-items: center;
-	margin: 20px 39.5%;
-	font-weight: 700;
-	font-size: 140%;
-	grid-template-columns: 1fr 1fr 1fr 1fr;
-	grid-template-rows: auto;
-	grid-template-areas:
-		"main-readout-0 main-readout-1 main-readout-2 main-readout-3";
-}
