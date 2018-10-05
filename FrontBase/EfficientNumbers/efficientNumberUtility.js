@@ -143,6 +143,7 @@ $(document).ready(function(){
 });
 function setupEffDigits() {
 	$(".eff-digit").html('<div class="eff-digit-container" id="main-digit-3"><span class="d-0"></span><span class="d-1"></span><span class="d-2"></span><span class="d-3"></span><span class="d-4"></span><span class="d-5"></span><span class="d-6"></span><span class="d-7"></span><span class="d-8"></span></div>');
+	setupEffDigitSize(".eff-digit");
 }
 
 function setEffDigitColor(targetDigitSelector, color) {
@@ -157,3 +158,11 @@ function setEffDigitColor(targetDigitSelector, color) {
 function setEffDigitValue(targetDigitSelector, hex) {
 	$(targetDigitSelector).removeClass("eff-0 eff-1 eff-2 eff-3 eff-4 eff-5 eff-6 eff-7 eff-8 eff-9 eff-a eff-b eff-c eff-d eff-e eff-f").addClass("eff-"+hex);
 }
+function setEffDigitSize(targetDigitSelector, size) {
+	$(targetDigitSelector).css({"width": size, "height": size, "font-size": size});
+}
+function setupEffDigitSize(targetDigitSelector) {
+	setEffDigitSize(targetDigitSelector, $(targetDigitSelector).attr("eff-digit-size"));
+}
+
+/* -=- Clock Number Display -=- */
