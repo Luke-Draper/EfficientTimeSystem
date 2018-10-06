@@ -6,7 +6,7 @@ function getTestTime() {
 }
 
 function loadTime() {
-	var current = new Date(getTestTime());
+	var current = new Date();//getTestTime());
 	var hour = current.getHours();
 	var minute = current.getMinutes();
 	var second = current.getSeconds();
@@ -16,23 +16,19 @@ function loadTime() {
 	var secondString = addZero(second);
 	var milliString = addZeros(milli);
 	var currentSecond = (((hour*60)+minute)*60)+second+milli/1000;
-	var efficientSecond = decToEff(currentSecond);
-	var hexEquiv = decToHex(currentSecond);
-	var efficientHexEquiv = effDecToEffHex(efficientSecond);
+	var efficientSecond = decToEffDec(currentSecond);
+	var hexEquiv = decToHexFromMultiBaseMath(currentSecond);
+	var efficientHexEquiv = decToHexFromMultiBaseMath(efficientSecond);
 	var standardString = hourString + ":" + minuteString + ":" + secondString + "." + milliString;
 	$('#dec-clock').text(standardString);
 	$('#eff-dec-clock').text(String(efficientSecond).substr(0,7));
 	$('#hexadec-clock').text(hexEquiv.substr(0,7));
 	$('#eff-hexadec-clock').text(efficientHexEquiv.substr(0,4));
-	updateDigits(efficientHexEquiv.substr(0,4));
+	setEffNumberValueFromMultiBaseMath('#main-clock-face', efficientSecond);
+	updateText(efficientHexEquiv.substr(0,4));
 	updateComparisonLine(efficientSecond);
 }
-function updateDigits(effHex) {
-	$(".eff-digit").removeClass("eff-0 eff-1 eff-2 eff-3 eff-4 eff-5 eff-6 eff-7 eff-8 eff-9 eff-a eff-b eff-c eff-d eff-e eff-f");
-	$("#main-digit-0").addClass("eff-"+effHex.charAt(0));
-	$("#main-digit-1").addClass("eff-"+effHex.charAt(1));
-	$("#main-digit-2").addClass("eff-"+effHex.charAt(2));
-	$("#main-digit-3").addClass("eff-"+effHex.charAt(3));
+function updateText(effHex) {
 	$("#main-readout-0").text(convertEffHexCharToSyllable(effHex.charAt(0)));
 	$("#main-readout-1").text(convertEffHexCharToSyllable(effHex.charAt(1)));
 	$("#main-readout-2").text(convertEffHexCharToSyllable(effHex.charAt(2)));
@@ -59,34 +55,9 @@ function addZeros(input) {
 	return input;
 }
 
-function decToHex(dec) {
-	return dec.toString(16);
-}
-function decToEff(dec) {
-	if (dec >= CONVERSION_OFFSET) {
-		dec -= CONVERSION_OFFSET;
-	} else {
-		dec += (MAX_DEC_TIME - CONVERSION_OFFSET);
-	}
-	return (dec * CONVERSION_FACTOR);
-}
-function effDecToEffHex(dec) {
-	var hex = decToHex(dec);
-	if (hex.length < 1) {
-		hex = "0000" + hex
-	} else if (hex.length < 2) {
-		hex = "000" + hex
-	} else if (hex.length < 3) {
-		hex = "00" + hex
-	} else if (hex.length < 4) {
-		hex = "0" + hex
-	}
-	return hex;
-}
-
 $(document).ready(function(){
 	loadTime();
-	standardTimeout = setInterval(loadTime, 10);
+	standardTimeout = setInterval(loadTime, 100);
 });
 
 

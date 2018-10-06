@@ -148,6 +148,11 @@ $(document).ready(function(){
 	setupEffNumbers();
 });
 
+function setEffNumberValueFromMultiBaseMath(targetNumberSelector, decimalValue) {
+	var val = new multiBaseInteger(decimalValue, 16).baseIntegerString;
+	$(targetNumberSelector).attr("eff-number-value", val);
+	updateEffNumbers(targetDigitSelector);
+}
 function setupEffNumbers() {
 	updateEffNumbers(".eff-number");
 }

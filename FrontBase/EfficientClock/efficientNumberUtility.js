@@ -7,6 +7,9 @@ const MAX_DEC_TIME = 60*60*24;
 function decToHex(dec) {
 	return dec.toString(16);
 }
+function decToHexFromMultiBaseMath(dec) {
+	return (new MultiBaseInteger(dec, 16).baseIntegerString);
+}
 function decToEffDec(dec) {
 	if (dec >= CONVERSION_OFFSET) {
 		dec -= CONVERSION_OFFSET;
@@ -15,11 +18,11 @@ function decToEffDec(dec) {
 	}
 	return (dec * CONVERSION_FACTOR);
 }
-function effDecToEffHex(dec) {
-	return decToHex(dec);
-}
 function decToEffHex(dec) {
-	return effDecToEffHex(decToEffDec(dec));
+	return decToHex(decToEffDec(dec));
+}
+function decToEffHexFromMultiBaseMath(dec) {
+	return decToHexFromMultiBaseMath(decToEffDec(dec));
 }
 function incrementHexDigit(hex) {
 	if (input == "0") {
@@ -142,12 +145,40 @@ function convertEffHexToSyllables(input) {
 
 /* -=- Efficient Number Display -=- */
 
+const DIGIT_HTML = '<div class="eff-digit-container"><span class="d-minus"></span><span class="d-0"></span><span class="d-1"></span><span class="d-2"></span><span class="d-3"></span><span class="d-4"></span><span class="d-5"></span><span class="d-6"></span><span class="d-7"></span><span class="d-8"></span></div>';
+
 $(document).ready(function(){
-	setupEffDigits();
+	setupEffNumbers();
 });
+
+function setEffNumberValueFromMultiBaseMath(targetNumberSelector, decimalValue) {
+	var val = decToHexFromMultiBaseMath(decimalValue);
+	$(targetNumberSelector).attr("eff-number-value", val);
+	updateEffNumbers(targetNumberSelector);
+}
+function setupEffNumbers() {
+	updateEffNumbers(".eff-number");
+}
+function updateEffNumbers(targetNumberSelector) {
+	$(targetNumberSelector).each(function() {
+		var val = $(this).attr("eff-number-value");
+		var size = $(this).attr("eff-digit-size");
+		var out = '<div class="eff-number-container">';
+		var columns = "";
+		for (var i = 0; i<val.length;i++) {
+			out += '<div class="eff-digit" eff-digit-value="'+val.charAt(i)+'" eff-digit-size="'+size+'">'+DIGIT_HTML+'</div>';
+			columns += " auto";
+		}
+		out += "</div>"
+		$(this).html(out);
+		$(this).children(".eff-number-container").css("grid-template-columns", columns);
+	});
+	setupEffDigits();
+}
+
 function setupEffDigits() {
-	$(".eff-digit").html('<div class="eff-digit-container"><span class="d-0"></span><span class="d-1"></span><span class="d-2"></span><span class="d-3"></span><span class="d-4"></span><span class="d-5"></span><span class="d-6"></span><span class="d-7"></span><span class="d-8"></span></div>');
-	setupEffDigitSize(".eff-digit");
+	setupEffDigitValue();
+	setupEffDigitSize();
 }
 
 function setEffDigitColor(targetDigitSelector, color) {
@@ -160,12 +191,34 @@ function setEffDigitColor(targetDigitSelector, color) {
 }
 
 function setEffDigitValue(targetDigitSelector, hex) {
-	$(targetDigitSelector).removeClass("eff-0 eff-1 eff-2 eff-3 eff-4 eff-5 eff-6 eff-7 eff-8 eff-9 eff-a eff-b eff-c eff-d eff-e eff-f").addClass("eff-"+hex);
+	if (hex == ".") {
+		hex = "point";
+	}
+	$(targetDigitSelector).removeClass("eff-digit-minus eff-digit-point eff-digit-0 eff-digit-1 eff-digit-2 eff-digit-3 eff-digit-4 eff-digit-5 eff-digit-6 eff-digit-7 eff-digit-8 eff-digit-9 eff-digit-a eff-digit-b eff-digit-c eff-digit-d eff-digit-e eff-digit-f").addClass("eff-digit-"+hex);
+}
+function setupEffDigitValue() {
+	updateEffDigitValue(".eff-digit");
+}
+function updateEffDigitValue(targetDigitSelector) {
+	$(targetDigitSelector).each(function() {
+		var val = $(this).attr("eff-digit-value");
+		if (val == ".") {
+			val = "point";
+		}
+		if (val == "-") {
+			val = "minus";
+		}
+		$(this).removeClass("eff-digit-minus eff-digit-point eff-digit-0 eff-digit-1 eff-digit-2 eff-digit-3 eff-digit-4 eff-digit-5 eff-digit-6 eff-digit-7 eff-digit-8 eff-digit-9 eff-digit-a eff-digit-b eff-digit-c eff-digit-d eff-digit-e eff-digit-f");
+		$(this).addClass("eff-digit-"+val);
+	});
+}
+function setupEffDigitSize() {
+	updateEffDigitSize(".eff-digit");
 }
 function setEffDigitSize(targetDigitSelector, size) {
 	$(targetDigitSelector).css({"width": size, "height": size, "font-size": size});
 }
-function setupEffDigitSize(targetDigitSelector) {
+function updateEffDigitSize(targetDigitSelector) {
 	$(targetDigitSelector).each(function() {
 		var size = $(this).attr("eff-digit-size");
 		$(this).css({"width": size, "height": size, "font-size": size});

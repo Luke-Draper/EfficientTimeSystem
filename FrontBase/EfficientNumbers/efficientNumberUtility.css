@@ -147,9 +147,36 @@
 }
 .d-minus {
 	grid-area: d-minus;
-	background-color: #444444;
 	height: .15789473684em;
-	width: .35789473684em; /* 38/190 */
+	/*overflow: hidden;
+	border-top: .05263157894em solid rgba(0,0,255,25%);
+	border-bottom: .05263157894em solid rgba(0,0,255,25%);
+	border-right: .06315789473em solid red;
+	border-left: .06315789473em solid transparent;*/
+	width: .3em; /* 38/190 */
+	/*background-color: #444444;*/
+	position: relative;
+}
+.d-minus:before {
+	content: "";
+	position: absolute;
+	left: -0.026em;
+	top: .07894736842em;
+	border-bottom: .08em solid #444444;
+	border-left: .05em solid transparent;
+	border-right: .05em solid transparent;
+	height: 0;
+	width: .25em;
+}
+.d-minus:after {
+	content: "";
+	position: absolute;
+	left: -0.026em;
+	border-top: .08em solid #444444;
+	border-left: .05em solid transparent;
+	border-right: .05em solid transparent;
+	height: 0;
+	width: .25em;
 }
 
 .eff-digit-0 .d-1, .eff-digit-3 .d-1, .eff-digit-4 .d-1,.eff-digit-5 .d-1,.eff-digit-6 .d-1,.eff-digit-7 .d-1,
@@ -170,8 +197,8 @@
 .eff-digit-8 .d-8, .eff-digit-9 .d-8, .eff-digit-a .d-8,.eff-digit-b .d-8,.eff-digit-c .d-8,.eff-digit-d .d-8,
 .eff-digit-point .d-1, .eff-digit-point .d-2, .eff-digit-point .d-3, .eff-digit-point .d-4,
 .eff-digit-point .d-5, .eff-digit-point .d-6, .eff-digit-point .d-7, .eff-digit-point .d-8,
-.eff-digit-minus .d-0, .eff-digit-minus .d-2, .eff-digit-minus .d-3, .eff-digit-minus .d-4,
-.eff-digit-minus .d-6, .eff-digit-minus .d-7, .eff-digit-minus .d-8,
+.eff-digit-minus .d-0, .eff-digit-minus .d-1, .eff-digit-minus .d-2, .eff-digit-minus .d-3, .eff-digit-minus .d-4,
+.eff-digit-minus .d-5, .eff-digit-minus .d-6, .eff-digit-minus .d-7, .eff-digit-minus .d-8,
 .eff-digit-point .d-minus, .eff-digit-0 .d-minus, .eff-digit-1 .d-minus, .eff-digit-2 .d-minus, .eff-digit-3 .d-minus, .eff-digit-4 .d-minus,.eff-digit-5 .d-minus,.eff-digit-6 .d-minus,.eff-digit-7 .d-minus,
 .eff-digit-8 .d-minus, .eff-digit-9 .d-minus, .eff-digit-a .d-minus,.eff-digit-b .d-minus,.eff-digit-c .d-minus,.eff-digit-d .d-minus,.eff-digit-e .d-minus,.eff-digit-f .d-minus {
 	display: none !important;
