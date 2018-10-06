@@ -142,7 +142,7 @@ function convertEffHexToSyllables(input) {
 
 /* -=- Efficient Number Display -=- */
 
-const DIGIT_HTML = '<div class="eff-digit-container"><span class="d-0"></span><span class="d-1"></span><span class="d-2"></span><span class="d-3"></span><span class="d-4"></span><span class="d-5"></span><span class="d-6"></span><span class="d-7"></span><span class="d-8"></span></div>';
+const DIGIT_HTML = '<div class="eff-digit-container"><span class="d-minus"></span><span class="d-0"></span><span class="d-1"></span><span class="d-2"></span><span class="d-3"></span><span class="d-4"></span><span class="d-5"></span><span class="d-6"></span><span class="d-7"></span><span class="d-8"></span></div>';
 
 $(document).ready(function(){
 	setupEffNumbers();
@@ -154,7 +154,6 @@ function setupEffNumbers() {
 function updateEffNumbers(targetNumberSelector) {
 	$(targetNumberSelector).each(function() {
 		var val = $(this).attr("eff-number-value");
-		console.log(val);
 		var size = $(this).attr("eff-digit-size");
 		var out = '<div class="eff-number-container">';
 		var columns = "";
@@ -164,7 +163,7 @@ function updateEffNumbers(targetNumberSelector) {
 		}
 		out += "</div>"
 		$(this).html(out);
-		$(this).children(".eff-number-container").css("grid-template-columns", columns)
+		$(this).children(".eff-number-container").css("grid-template-columns", columns);
 	});
 	setupEffDigits();
 }
@@ -187,7 +186,7 @@ function setEffDigitValue(targetDigitSelector, hex) {
 	if (hex == ".") {
 		hex = "point";
 	}
-	$(targetDigitSelector).removeClass("eff-digit-point eff-digit-0 eff-digit-1 eff-digit-2 eff-digit-3 eff-digit-4 eff-digit-5 eff-digit-6 eff-digit-7 eff-digit-8 eff-digit-9 eff-digit-a eff-digit-b eff-digit-c eff-digit-d eff-digit-e eff-digit-f").addClass("eff-digit-"+hex);
+	$(targetDigitSelector).removeClass("eff-digit-minus eff-digit-point eff-digit-0 eff-digit-1 eff-digit-2 eff-digit-3 eff-digit-4 eff-digit-5 eff-digit-6 eff-digit-7 eff-digit-8 eff-digit-9 eff-digit-a eff-digit-b eff-digit-c eff-digit-d eff-digit-e eff-digit-f").addClass("eff-digit-"+hex);
 }
 function setupEffDigitValue() {
 	updateEffDigitValue(".eff-digit");
@@ -198,7 +197,10 @@ function updateEffDigitValue(targetDigitSelector) {
 		if (val == ".") {
 			val = "point";
 		}
-		$(this).removeClass("eff-digit-point eff-digit-0 eff-digit-1 eff-digit-2 eff-digit-3 eff-digit-4 eff-digit-5 eff-digit-6 eff-digit-7 eff-digit-8 eff-digit-9 eff-digit-a eff-digit-b eff-digit-c eff-digit-d eff-digit-e eff-digit-f");
+		if (val == "-") {
+			val = "minus";
+		}
+		$(this).removeClass("eff-digit-minus eff-digit-point eff-digit-0 eff-digit-1 eff-digit-2 eff-digit-3 eff-digit-4 eff-digit-5 eff-digit-6 eff-digit-7 eff-digit-8 eff-digit-9 eff-digit-a eff-digit-b eff-digit-c eff-digit-d eff-digit-e eff-digit-f");
 		$(this).addClass("eff-digit-"+val);
 	});
 }

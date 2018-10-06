@@ -37,6 +37,12 @@
 		"d-3 d-1 d-7"
 		"d-2 d-0 d-8";
 }
+.eff-digit.eff-digit-minus .eff-digit-container {
+	grid-template-areas:
+		"d-4 d-5 d-6"
+		"d-3 d-minus d-7"
+		"d-2 d-1 d-8";
+}
 .d-0 {
 	grid-area: d-0;
 	width: 48%;
@@ -58,9 +64,9 @@
 		-webkit-linear-gradient(225deg, transparent 28.8%, #444444 28.8%),
 		-webkit-linear-gradient(315deg, transparent 28.8%, #444444 28.8%);
 	background-position: bottom left, bottom right, top right, top left;
-	-moz-background-size: 55% 55%;
-	-webkit-background-size: 55% 55%;
-	background-size: 55% 55%;
+	-moz-background-size: 51% 51%;
+	-webkit-background-size: 51% 51%;
+	background-size: 51% 51%;
 	background-repeat: no-repeat;
 }
 .d-1 {
@@ -139,6 +145,12 @@
 	height: .2em;
 	margin-left: -.01578947368em;
 }
+.d-minus {
+	grid-area: d-minus;
+	background-color: #444444;
+	height: .15789473684em;
+	width: .35789473684em; /* 38/190 */
+}
 
 .eff-digit-0 .d-1, .eff-digit-3 .d-1, .eff-digit-4 .d-1,.eff-digit-5 .d-1,.eff-digit-6 .d-1,.eff-digit-7 .d-1,
 .eff-digit-8 .d-1, .eff-digit-9 .d-1, .eff-digit-a .d-1,.eff-digit-b .d-1,.eff-digit-c .d-1,.eff-digit-d .d-1,.eff-digit-e .d-1,.eff-digit-f .d-1,
@@ -157,7 +169,10 @@
 .eff-digit-0 .d-8, .eff-digit-1 .d-8, .eff-digit-2 .d-8,.eff-digit-3 .d-8,.eff-digit-4 .d-8,.eff-digit-5 .d-8,.eff-digit-6 .d-8,.eff-digit-7 .d-8,
 .eff-digit-8 .d-8, .eff-digit-9 .d-8, .eff-digit-a .d-8,.eff-digit-b .d-8,.eff-digit-c .d-8,.eff-digit-d .d-8,
 .eff-digit-point .d-1, .eff-digit-point .d-2, .eff-digit-point .d-3, .eff-digit-point .d-4,
-.eff-digit-point .d-5, .eff-digit-point .d-6, .eff-digit-point .d-7, .eff-digit-point .d-8 {
-	background-color: transparent !important;
-	border-color: transparent !important;
+.eff-digit-point .d-5, .eff-digit-point .d-6, .eff-digit-point .d-7, .eff-digit-point .d-8,
+.eff-digit-minus .d-0, .eff-digit-minus .d-2, .eff-digit-minus .d-3, .eff-digit-minus .d-4,
+.eff-digit-minus .d-6, .eff-digit-minus .d-7, .eff-digit-minus .d-8,
+.eff-digit-point .d-minus, .eff-digit-0 .d-minus, .eff-digit-1 .d-minus, .eff-digit-2 .d-minus, .eff-digit-3 .d-minus, .eff-digit-4 .d-minus,.eff-digit-5 .d-minus,.eff-digit-6 .d-minus,.eff-digit-7 .d-minus,
+.eff-digit-8 .d-minus, .eff-digit-9 .d-minus, .eff-digit-a .d-minus,.eff-digit-b .d-minus,.eff-digit-c .d-minus,.eff-digit-d .d-minus,.eff-digit-e .d-minus,.eff-digit-f .d-minus {
+	display: none !important;
 }
